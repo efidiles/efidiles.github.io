@@ -1,0 +1,8 @@
+.post-listing {
+  ul {
+    @extend .list-clean;
+  }
+  li:first-child h1 {
+    margin-top: .3em;
+  }
+}

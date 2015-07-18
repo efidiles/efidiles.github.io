@@ -1,0 +1,14 @@
+.paginator {
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-top: $sizeBorder solid $colorGray;
+  border-bottom: $sizeBorder solid $colorGray;
+  margin-top: $sizeGap / 2;
+}
+
+@media screen and (min-width: 768px) {
+  .paginator {
+    border: none;
+  }
+}

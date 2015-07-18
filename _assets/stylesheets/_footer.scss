@@ -1,0 +1,33 @@
+footer {
+  padding: 0 $sizeGap $sizeGap;
+}
+
+footer strong {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  footer a {
+    display: none;
+  }
+  footer {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    height: 7em;
+    border-top: 1px solid $colorGray;
+    background: $colorDarkBlue;
+  }
+  footer strong {
+    display: block;
+    font-size: 10em;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    text-align: right;
+    position: absolute;
+    left: 50%;
+    bottom: -0.5em;
+    margin-left: -10%;
+    color: #fff;
+  }
+}

@@ -1,0 +1,54 @@
+#main-header strong,
+#main-header ul {
+  display: none;
+}
+
+#main-header ul {
+  @extend .list-horizontal;
+  li {
+    display: block;
+    float: none;
+    margin: 0;
+  }
+}
+
+#main-header a {
+  @extend .btn-primary;
+  display: block;
+  padding: $sizeGap / 2;
+  text-align: center;
+  display: block;
+  font-size: 1.4em;
+}
+
+#main-header nav.open ul,
+.no-js #main-header nav ul {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  #main-header nav {
+    position: relative;
+    z-index: 1;
+  }
+  #main-header nav > a {
+    display: none;
+  }
+  #main-header strong {
+    display: block;
+    font-size: 10em;
+    max-width: $maxWidth;
+    margin: -.5em auto 0 auto;
+  }
+  #main-header ul {
+    background: $colorDarkBlue;
+    background: rgba(49, 101, 145, 0.95);
+    display: block;
+  }
+  #main-header a {
+    float: left;
+    margin-left: 1em;
+    background: none;
+    border: none;
+  }
+}
