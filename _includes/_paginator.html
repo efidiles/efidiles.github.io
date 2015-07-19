@@ -10,7 +10,7 @@
   {% endif %}
   {{ paginator.page }} out of {{ paginator.total_pages }}
   {% if paginator.next_page %}
-    <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
+    <a href="/page{{ paginator.next_page }}">Older ›</a>
   {% else %}
     <a class="disabled">Older ›</a>
   {% endif %}

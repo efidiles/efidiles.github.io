@@ -1,0 +1,12 @@
+{% if page.technologies %}
+<section id="technologies">
+  <h2>Technologies used:</h2>
+  <ul>
+      {% for technology in page.technologies %}
+      <li>
+        {{ technology }}{% unless forloop.last %}, {% endunless %}
+      </li>
+      {% endfor %}
+  </ul>
+</section>
+{% endif %}

@@ -1,0 +1,28 @@
+aside {
+  padding: $sizeGap;
+  border-top: 1px solid $colorGray;
+
+  ul {
+    @extend .list-clean;
+
+    margin: $sizeGap 0;
+  }
+
+  li {
+    line-height: 1.4;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  aside {
+    border: none;
+    float: left;
+    width: 34%;
+    padding: $sizeGap;
+  }
+}

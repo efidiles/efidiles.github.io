@@ -5,8 +5,17 @@
         {% unless post.draft %}
             <li>
                 <article>
-                    <h1><small><a href="{{ post.url }}">{{ post.title }}</a></small></h1>
-                    <p>Date: <time datetime="{{ post.date }}">{{ post.date | date_to_long_string }}</time></p>
+                    <h1>
+                        <small>
+                            <a href="{{ post.url }}">
+                                {% if post.tags contains 'work' %}
+                                    Project: 
+                                {% endif %}
+                                {{ post.title }}
+                            </a>
+                        </small>
+                    </h1>
+                    Published: <time datetime="{{ post.date }}">{{ post.date | date_to_long_string }}</time>
                     <p>{{ post.excerpt}}</p>
                 </article>
             </li>

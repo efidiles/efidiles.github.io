@@ -1,0 +1,20 @@
+---
+layout: base
+---
+<h1>{{ page.tag | camelcase }}</h1>
+
+<div class="post-listing">
+    <ul>
+    {% for post in site.tags[page.tag] %}
+        {% unless post.draft %}
+            <li>
+                <article>
+                    <h1><small><a href="{{ post.url }}">{{ post.title }}</a></small></h1>
+                    Published: <time datetime="{{ post.date }}">{{ post.date | date_to_long_string }}</time>
+                    <p>{{ post.excerpt}}</p>
+                </article>
+            </li>
+        {% endunless %}
+    {% endfor %}
+    </ul>
+</div>

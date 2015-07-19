@@ -1,0 +1,53 @@
+#gallery ul {
+  @extend .list-horizontal;
+
+  margin-top: $sizeGap;
+
+  a {
+    display: block;
+    position: relative;
+  }
+
+  figcaption {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: .5em;
+    background: #000;
+    background: linear-gradient(to right, #000000 0%, #000000 38%, rgba(0, 0, 0, 0.39) 76%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+  }
+
+  li {
+    margin-left: 0;
+    margin-bottom: $sizeGap;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.3);
+    max-width: 280px;
+  }
+
+  li:nth-child(even) {
+    margin-left: $sizeGap;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #gallery ul li {
+    float: none;
+    display: block;
+    max-width: none;
+  }
+
+  #gallery ul li:nth-child(even) {
+    margin-left: 0;
+  }
+
+  #gallery img {
+    width: 100%;
+  }
+
+  #gallery ul li:last-child {
+    margin-bottom: 0;
+  }
+}
