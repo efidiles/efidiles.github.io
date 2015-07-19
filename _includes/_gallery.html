@@ -1,0 +1,17 @@
+{% if page.thumbs %}
+<section id="gallery">
+  <h2>Screenshots</h2>
+  <ul>
+      {% for thumb in page.thumbs %}
+      <li>
+        <a href="{{ thumb[0] | replace:'thumb-','' }}" target="_blank">
+          <figure>
+            <img src="{{ thumb[0] }}" alt="Gallery image: {{ thumb[1] }}">
+            <figcaption>{{ thumb[1] }}</figcaption>
+          </figure>
+        </a>
+      </li>
+      {% endfor %}
+  </ul>
+</section>
+{% endif %}

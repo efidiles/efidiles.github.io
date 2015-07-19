@@ -1,0 +1,12 @@
+<nav class="paginator">
+  {% if page.next %}
+      <a href="{{ page.next.url }}">‹ Newer</a>
+  {% else %}
+    <a class="disabled">‹ Newer</a>
+  {% endif %} | 
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}">Older ›</a>
+  {% else %}
+    <a class="disabled">Older ›</a>
+  {% endif %}
+</nav>

@@ -1,0 +1,25 @@
+article {
+  header {
+    margin-bottom: $sizeGap;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: $sizeGap;
+  }
+
+  li {
+    line-height: 1.4;
+  }
+}
+
+#technologies {
+  ul {
+    @extend .list-horizontal;
+  }
+
+  ul li {
+    margin-left: 0;
+    margin-right: .5em;
+  }
+}
