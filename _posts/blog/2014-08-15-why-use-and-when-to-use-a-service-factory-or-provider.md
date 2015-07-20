@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: Why use and when to use a service, factory or provider
+title: Why use and when to use a service, factory or provider in AngularJS
 
 excerpt: "A practical example which clarifies the differences between services, factories and providers in AngularJS."
 
@@ -15,7 +15,7 @@ Any AngularJS developer knows that there are three different ways of declaring a
 
 * using a **"provider declaration"**
 
-Instead of insisting too much about the theoretical differences between these three (a topic already covered in many articles over the internet), I prefer to highlight three use cases when each of them is particularily suitable. 
+Instead of insisting too much about the theoretical differences between these three (a topic already covered in many articles over the internet), I prefer to highlight three use cases where each of them is particularily suitable. 
 
  
 
@@ -63,11 +63,11 @@ Eg:
 );
 {% endhighlight %}
 
-*Because the NotificationQueue is declared using a factory, the NotificationQueue parameter in the above controller will be the returned value of the NotificationQueue factory declaration - which is the NotificationsQueueConstructor.*
+*Because the NotificationQueue is declared using a factory, the NotificationQueue parameter in the above controller will be the returned value of the NotificationQueue factory declaration - which is a reference to the NotificationsQueueConstructor.*
 
 Why not use a "service declaration"?
 
-Because a "service declaration" injects an instance of an object. Inside a "service declaration" you are actually inside a constructor.
+Because a "service declaration" injects an **instance of an object**. Inside a "service declaration" you are actually inside a constructor.
 
 Why not a provider?
 
@@ -75,7 +75,7 @@ Why not a provider?
 
 ###2. Example where a service declaration is the most suitable to use
 
-As already mentioned, the above example can't be implemented using the "service declaration". The reason is that a service defined using a "service declaration" becomes an object instance when injected in other parts of your application - you can not return something else from it, you just add properties and methods to the current object (to this). When you are inside a "service declaration" you are inside a constructor.
+As already mentioned, the above example can't be implemented using the "service declaration". The reason is that a service defined using a "service declaration" becomes an object instance when injected in other parts of your application - you can not return something else from it, you just add properties and methods to the current object (to this). When you are inside a "service declaration" you are actually **inside a constructor**.
 
 A suitable example of "service declaration" would be a wrapper for our app's Ajax requests (wrapping our backend API).
 

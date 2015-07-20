@@ -32,6 +32,6 @@ Adaptive-Resposive website built for Dracula Series.
 
 The website has 3 different templates which have different layouts for desktop, tablets and mobiles view.
 
-The website is rich in animations based in Tweenlite library and good old GIF files.
+The website is rich in animations based on Tweenlite library and good old GIF files.
 
 The backend was build in Wordpress and the frontend using HTML, CSS, Javascript and jQuery.
