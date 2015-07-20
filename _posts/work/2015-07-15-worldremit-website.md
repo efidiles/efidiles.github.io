@@ -45,4 +45,4 @@ I worked in a team of 2 developers and contracted to maintain, internationalise,
 - Refactored backend and frontend code to help with versioning and simplifying the deployment process
 - Helped with narrowing down and fix issues with Umbraco caching and uploads in a load balancing setup
 - Refactored document types and templates to allow internationalisation of the website
-- Helped with the design and integration of third party payment systems (third party skins, A/B test in Optimizely etc.)
+- Helped with the design and integration of third parties (skins for payment gateways, A/B tests in Optimizely etc.)
