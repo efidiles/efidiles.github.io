@@ -4,7 +4,7 @@ tags: [work]
 
 title: WorldRemit website
 
-excerpt: "Carried maintainance tasks, added internationalisation, introduced modern frontend workflow and progressively refactored and updated the design of the website."
+excerpt: "Carried out maintainance tasks, added internationalisation, introduced modern frontend workflow and progressively refactored and updated the design of the website."
 
 url: http://www.butlins.com
 
@@ -36,7 +36,7 @@ thumbs:
 
 I worked in a team of 2 developers and contracted to maintain, internationalise, introduce modern frontend workflow and progressively refactor and update the design of the website. 
 
-- Carried general maintenance task and bug fixing at all levels (frontend, backend, CMS)
+- Carried out general maintenance task and bug fixing at all levels (frontend, backend, CMS)
 - Advocated and helped with the migration from TFS to GIT
 - Introduced automation using Gulp (linters, concaternation, minification)
 - Establish strategies to internationalise the website and progressively update the design
