@@ -8,7 +8,7 @@ excerpt: "If your 'npm test' command reports more tests than you actually define
 ---
 
 This is a school boy error but it ate more than half a day of my lifetime.  
-I've decided to give [tape](https://github.com/substack/tape) testing framework a go after coming across [an article](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4) of Eric Elliott in Medium.
+I've decided to give <a href="https://github.com/substack/tape" target="_blank">tape</a> testing framework a go after coming across <a href="https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4" target="_blank">an article</a> of Eric Elliott in Medium.
 
 The issue I had was that my express server wasn't closing after all the tests were completed or the test was timing out.  
 After some digging I noticed `tape` was running more tests than the actual amount of tests defined in my project. Next step was to go through all my tests and make sure I didn't have any strange logic or weird syntax in my files. 
