@@ -3,7 +3,7 @@ layout: post
 
 title: Warning regarding 'npm test' command  
 
-excerpt: "If your 'npm test' command reports more tests than actually defined then read this"
+excerpt: "If your 'npm test' command reports more tests than you actually defined in your project then read this"
 
 ---
 
