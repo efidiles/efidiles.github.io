@@ -15,3 +15,7 @@ After some digging I noticed `tape` was running more tests than the actual amoun
 
 Everything was fine there so I realised that my `npm test` command in `package.json` was the culprit.  
 It looked like this: `"test": "tape test/**/*.js"` when it should obviously look like this: `"test": "tape ./test/**/*.js"`; otherwise it would launch your test command against all `test` directories and subdirectories inside your project.
+
+### Update
+
+Apart from the issue above, I found out that the express server was hanging due to the `winston-graylog2` package not closing connections properly. The issue is reported <a href="https://github.com/namshi/winston-graylog2/issues/24" target="_blank">here</a>.
