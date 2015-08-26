@@ -14,4 +14,4 @@ The issue I had was that my express server wasn't closing after all the tests we
 After some digging I noticed `tape` was running more tests than the actual amount of tests defined in my project. Next step was to go through all my tests and make sure I didn't have any strange logic or weird syntax in my files. 
 
 Everything was fine there so I realised that my `npm test` command in `package.json` was the culprit.  
-It looked like this: `"test": "tape test/**/*.js"` when it should obviously look like this: `"test": "tape ./test/**/*.js"`; otherwise it would launch your test command against all `test` directories in your project.
+It looked like this: `"test": "tape test/**/*.js"` when it should obviously look like this: `"test": "tape ./test/**/*.js"`; otherwise it would launch your test command against all `test` directories and subdirectories inside your project.
