@@ -8,7 +8,8 @@ excerpt: "Solution to make Sublime Text always ignore certain folders when perfo
 ---
 
 Sublime Text can be instructed to ignore certain folders by using the `folder_exclude_patterns` setting in your project's
-settings file or in your user's settings file. Eg: `"folder_exclude_patterns": [".svn", ".git", "node_modules", "coverage"]`.  
+settings file or in your user's settings file.  
+Eg: `"folder_exclude_patterns": [".svn", ".git", "node_modules", "coverage"]`.  
 However, this doesn't do anything for the 'Find & Replace' functionality and it's a bit annoying to keep manually adding 
 an exclude filter in the `Where` box.
 
