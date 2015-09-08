@@ -1,4 +1,4 @@
-# [https://fidil.es](fidil.es)
+# [http://fidil.es](fidil.es)
 
 My personal website based on Jekyll.
 
