@@ -21,5 +21,5 @@ A neat workaround is to do the following:
 The important bit is the `<open folders>` parameter. This will cause the search to only look in the folders available 
 in your sidebar thus it won't include those specified in the `folder_exclude_patterns` array.
 
-If you want to keep the folder in your sidebar then you could just use the keyboard shortcut and specify an exclude filters.
+If you want to keep the folder in your sidebar then you could just use the keyboard shortcut and specify an exclude filter.
 Eg: `{ "keys": ["ctrl+alt+h"], "command": "side_bar_find_in_selected", "args": {"paths": ["<open folders>-*/node_modules/*, -*/coverage/*"]} }`
