@@ -6,8 +6,6 @@ title: Cadbury competition
 
 excerpt: "Competition website created for Cadbury."
 
-url: http://www.butlins.com
-
 technologies:
     - HTML5
     - CSS3

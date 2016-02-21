@@ -6,7 +6,7 @@ title: Butlins website
 
 excerpt: "Website created for Butlins."
 
-url: http://www.butlins.com
+website: http://www.butlins.com
 
 technologies:
     - HTML5

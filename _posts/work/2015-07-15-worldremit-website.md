@@ -6,7 +6,7 @@ title: WorldRemit website
 
 excerpt: "Carried out maintainance tasks, added internationalisation, introduced modern frontend workflow and progressively refactored and updated the design of the website."
 
-url: http://www.butlins.com
+website: http://www.worldremit.com
 
 technologies:
     - HTML5
@@ -34,7 +34,7 @@ thumbs:
 
 > WorldRemit is an award-winning online money transfer company that enables customers to send remittances to family and friends in more than 110 countries. The service is a low-cost alternative to traditional money transfer companies that use high street agents and charge unreasonable fees.
 
-I worked in a team of 2 developers and contracted to maintain, internationalise, introduce modern frontend workflow and progressively refactor and update the design of the website. 
+I worked in a team of 2 developers and contracted to maintain, internationalise, introduce modern frontend workflow and progressively refactor and update the design of the website.
 
 - Carried out general maintenance task and bug fixing at all levels (frontend, backend, CMS)
 - Advocated and helped with the migration from TFS to GIT

@@ -6,7 +6,7 @@ title: Highways International shop
 
 excerpt: "Website created for Highways International."
 
-url: http://www.highways-shop.com
+website: http://www.highways-shop.com
 
 technologies:
     - HTML5
@@ -25,8 +25,8 @@ thumbs:
 
 This e-commerce website was created to meet some of the company's development plans. They are planning to use it for selling and advertising some of their vehicles and accessories. I created this website using Magento CMS and my contribution to the framework included:
 
-- Customizing the Magento template 
-- Creating a new layout for the product's pictures 
+- Customizing the Magento template
+- Creating a new layout for the product's pictures
 - Installing and customizing LightBox plug-in to preview pictures
 - Adding and customizing the slideshow displayed on the homepage and the catalogue's page
 - Redesigning the slideshow's behaviour in order to import the data from the Magento's database

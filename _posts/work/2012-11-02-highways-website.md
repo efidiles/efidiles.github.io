@@ -6,10 +6,10 @@ title: Highways International website
 
 excerpt: "Website created for Highways International."
 
-url: http://www.highwaysinternational.com
+website: http://www.highwaysinternational.com
 
 technologies:
-    - Flash 
+    - Flash
     - Actionscript 3
     - XML
     - Photoshop
@@ -22,7 +22,7 @@ thumbs:
 
 ---
 
-This is the company's homepage and was created from scratch using Flash, Actionscript 3.0, PHP, HTML, JavaScript and XML. The front-end was created using Adobe Photoshop CS4 and Flash CS4 and I used E4X with the purpose of retrieving the content from a XML file. 
+This is the company's homepage and was created from scratch using Flash, Actionscript 3.0, PHP, HTML, JavaScript and XML. The front-end was created using Adobe Photoshop CS4 and Flash CS4 and I used E4X with the purpose of retrieving the content from a XML file.
 
 The purpose of this website was to:
 

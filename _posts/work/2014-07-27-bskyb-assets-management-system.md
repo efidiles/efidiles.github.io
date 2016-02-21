@@ -6,7 +6,7 @@ title: Assets management system for BSkyB
 
 excerpt: "An assets management system built with AngularJS, ngBoilerplate, SASS and PHP / ProcessWire."
 
-url: www.believeinbetter.com
+website: http://www.believeinbetter.com
 
 technologies:
     - PHP
@@ -34,7 +34,7 @@ thumbs:
     /images/assets-management/thumb-news.png: News page
     /images/assets-management/thumb-upload-assets.png: Upload assets page
     /images/assets-management/thumb-our-brand.png: Our brand page
-    /images/assets-management/thumb-view-brandhub.png: View meetings page 
+    /images/assets-management/thumb-view-brandhub.png: View meetings page
 ---
 
 This website is an internal assets management system for Sky Brand department. I was the sole developer of the project.

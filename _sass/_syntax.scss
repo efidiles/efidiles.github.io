@@ -1,6 +1,6 @@
 .highlight {
   background: #fff;
-  padding: 7px 7px 7px 10px;
+  padding: 20px 7px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 20px 0 20px 0;
@@ -9,7 +9,7 @@
 
 code {
   font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
-  background: #F7F6F6;
+  background: #fff;
   padding: 0 5px;
 }
 
@@ -367,4 +367,8 @@ code {
   display: block;
   white-space: pre;
   word-wrap: normal;
+}
+
+code .gutter {
+  display: none;
 }

@@ -115,6 +115,7 @@ img {
 a {
   color: $colorLink;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover,
@@ -224,7 +225,7 @@ blockquote p {
   }
 
   body {
-    background: #fff url("/images/pattern.png");
+    background: #fff url("/images/pattern.jpg");
   }
 
   #main-header {
