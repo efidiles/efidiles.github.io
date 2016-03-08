@@ -17,6 +17,7 @@ In short the architecture can be described as: **a promise which gets decorated 
 
 
 This architecture offers the following benefits:
+
 - trivial to use in resolve phases - just needs to be injected and returned from the resolve function
 - since it's a promise, it can be used as a then-able in controllers. With the exception of route's controller where it makes more sense and it's more elegant to inject it through the route's resolve phase
 - can be easily injected and used in other services the same way we use any other promise
@@ -207,7 +208,7 @@ if (invalidCache && isUserLoggedIn) {
 }
 {% endhighlight %}
 
-which translates to
+which translates to:
 
 {% highlight javascript %}
 if (cache is not set and we have an auth token) {
@@ -235,6 +236,7 @@ With the above explanations and the comments in the code it should now be fairly
 
 
 Examples of usage:
+
 - in route's resolve if we need to guarantee that the data is available by the time we reach the controller:
 {% highlight javascript %}
 {
