@@ -7,9 +7,6 @@ excerpt: "A robust architecture for Angular services which behave like singleton
 
 ---
 
-# Flexible architecture for Angular services
-
-
 Moving logic to the services is always good practice and making the services easy to use and pass around is what makes the Angular development an enjoyable experience.
 
 
@@ -35,7 +32,9 @@ This architecture offers the following benefits:
     .factory('CurrentUser', CurrentUser);
 
   /* @ngInject */
-  function CurrentUser($rootScope, _, $q, Authentication, Restangular, RestAPI, AccountService) {
+  function CurrentUser($rootScope, _, $q, Authentication, Restangular, RestAPI,
+    AccountService) {
+      
     var path = 'current-user';
     var rolePath = 'role';
     var invalidCache = true;
@@ -59,7 +58,8 @@ This architecture offers the following benefits:
     if (invalidCache && isUserLoggedIn) {
       invalidCache = false;
       var currentUserPromise = thisService.fetchCurrentUserData();
-      cachedInstance = _.assign(currentUserPromise, _.cloneDeep(instanceDefaults));
+      cachedInstance = _.assign(currentUserPromise, 
+        _.cloneDeep(instanceDefaults));
     } else {
       // Return empty promise if not authenticated
       var emptyPromise = $q.resolve();
@@ -85,7 +85,8 @@ This architecture offers the following benefits:
     function _addElementMethods(userService) {
       userService.addRestangularMethod('getRole', 'get', rolePath);
 
-      userService.fetchCurrentUserData = _fetchCurrentUserData.bind(userService);
+      userService.fetchCurrentUserData = 
+        _fetchCurrentUserData.bind(userService);
 
       return userService;
     }
@@ -121,27 +122,31 @@ This architecture offers the following benefits:
 
         _setPermissions();
 
-        // Make sure we keep references of the cachedInstance and its nested objects. Don't override them with
-        // new objects. Eg: permissions property - we can not simply assign a new object to
-        // cachedInstance.permissions because it will allocate a new memory address and will break bindings in
-        // templates. Instead we need to clear the contents of permissions object and add new props. This way
-        // all the existing bindings still work because they target the same memory location not the memory
-        // location of newly created objects.
+        // Make sure we keep references of the cachedInstance and its nested 
+        // objects. Don't override them with new objects. Eg: permissions 
+        // property - we can not simply assign a new object to 
+        // cachedInstance.permissions because it will allocate a new memory 
+        // address and will break bindings in templates. Instead we need to 
+        // clear the contents of permissions object and add new props. This way 
+        // all the existing bindings still work because they target the same 
+        // memory location not the memory location of newly created objects.
 
-        // We need to clear existing properties and then assign them in order to prevent accumulating
-        // permissions from previous sessions.
+        // We need to clear existing properties and then assign them in order 
+        // to prevent accumulating permissions from previous sessions.
         _.map(cachedInstance.permissions, _removeProperty);
 
-        currentUser.permissions = _.assign(cachedInstance.permissions, permissions);
+        currentUser.permissions = 
+          _.assign(cachedInstance.permissions, permissions);
         currentUser.account = _.assign(cachedInstance.account, account);
 
         _.assign(cachedInstance, currentUser);
 
-        // Just decorating the service with the data is not enough because when the service is used
-        // in route's resolve methods the data we return here will be what's injected and available
-        // in the controllers.
-        // Don't return the cachedInstance (the promise itself) because of circular reference.
-        // Instead extend currentUser with the same properties and return it.
+        // Just decorating the service with the data is not enough because when 
+        // the service is used in route's resolve methods the data we return 
+        // here will be what's injected and available in the controllers.
+        // Don't return the cachedInstance (the promise itself) because of 
+        // circular reference. Instead extend currentUser with the same 
+        // properties and return it.
         return currentUser;
 
         function _removeProperty(val, prop, object) {
