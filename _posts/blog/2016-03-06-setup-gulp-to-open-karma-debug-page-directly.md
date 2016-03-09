@@ -52,4 +52,4 @@ function _getConnectionDetails() {
 Karma's `/debug.html` will now open in your browser.
 
 ## Github link
-[https://github.com/efidiles/karma-debug-with-browser-sync](https://github.com/efidiles/karma-debug-with-browser-sync)
+<a href="https://github.com/efidiles/karma-debug-with-browser-sync" target="_blank">https://github.com/efidiles/karma-debug-with-browser-sync</a>
