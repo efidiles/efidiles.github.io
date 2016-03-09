@@ -211,14 +211,14 @@ if (invalidCache && isUserLoggedIn) {
 
 which translates to:
 
-{% highlight %}
+```
 if (cache is not set and we have an auth token) {
   1. fetch the current user data from the api and
   2. decorate this service with the promise created by the above fetch
 } else {
   return an empty resolved promise
 }
-{% endhighlight %}
+```
 
 If the `else` branch is executed, we will go through the same process again when the `auth:login` event is triggered. The following piece of code does that:
 
@@ -241,7 +241,7 @@ Examples of usage:
 - in route's resolve if we need to guarantee that the data is available by the time we reach the controller:
 {% highlight javascript %}
 {
-  ...,
+  //...,
   resolve: {
   currentUser: function (CurrentUser) {
     return CurrentUser;

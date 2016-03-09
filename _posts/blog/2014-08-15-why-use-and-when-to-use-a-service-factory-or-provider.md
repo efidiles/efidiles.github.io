@@ -7,7 +7,7 @@ excerpt: "A practical example which clarifies the differences between services, 
 
 ---
 
-Any AngularJS developer knows that there are three different ways of declaring a service: 
+Any AngularJS developer knows that there are three different ways of declaring a service:
 
 * using a **"factory declaration"**
 
@@ -15,9 +15,9 @@ Any AngularJS developer knows that there are three different ways of declaring a
 
 * using a **"provider declaration"**
 
-Instead of insisting too much about the theoretical differences between these three (a topic already covered in many articles over the internet), I prefer to highlight three use cases where each of them is particularily suitable. 
+Instead of insisting too much about the theoretical differences between these three (a topic already covered in many articles over the internet), I prefer to highlight three use cases where each of them is particularily suitable.
 
- 
+
 
 ###1. Example where a factory declaration is the most suitable to use
 
@@ -27,38 +27,38 @@ Since in Angular a "factory declaration" it's basically a function which returns
 
 Example of code:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 .factory('NotificationsQueue', function () {
 
-  //define the constructor
+  // define the constructor
   function NotificationsQueueConstructor(params) {
     this.queue = [];
-    ...
+    // ...
   }
 
-  //define the prototype
-  NotificationsQueueConstructor.prototype.add = 
+  // define the prototype
+  NotificationsQueueConstructor.prototype.add =
   function() {
-    ...
+    // ...
   };
 
   //this is the important bit
   return NotificationsQueueConstructor;
 
-}); 
+});
 {% endhighlight %}
 
 We can then inject and create instances of our newly created type anywhere in our Angular app.
 
-Eg: 
+Eg:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 .controller(
-  'SomeController', 
-  function (NotificationQueue){ 
-    //this is the important bit
+  'SomeController',
+  function (NotificationQueue) {
+    // this is the important bit
     var nq = new NotificationQueue();
-    ...
+    // ...
   }
 );
 {% endhighlight %}
@@ -79,31 +79,39 @@ As already mentioned, the above example can't be implemented using the "service 
 
 A suitable example of "service declaration" would be a wrapper for our app's Ajax requests (wrapping our backend API).
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 .service('serverLayer', function () {
 
-  this.logout = function(){...}
+  this.logout = function() {
+      // ...
+  }
   this.users = {
-    add: function(){...}
+    add: function() {
+        // ...
+    }
   };
 
-  //notice: we're not returning anything 
-  //because we're inside a constructor here
-  ...
+  // notice: we're not returning anything
+  // because we're inside a constructor here
+  // ...
 }
 {% endhighlight %}
 
 The example above could be defined using a factory as well:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 .factory('serverLayer', function () {
   return {
-    logout = function(){...},
+    logout = function() {
+        // ...
+    },
     users = {
-       add: function(){...}
+       add: function() {
+           // ...
+       }
      }
   };
-  ...
+  // ...
 }
 {% endhighlight %}
 
@@ -113,18 +121,18 @@ The argument that using factories everywhere would make the code more consistent
 
 *Therefore when injecting the service declared using the "service declaration", in the below controller the serverLayer will always be an instance of an object and we can access its properties immediately.*
 
-{% highlight javascript linenos %}
-.controller( 'SomeController', 
-  function (serverLayer){ 
+{% highlight javascript %}
+.controller( 'SomeController',
+  function (serverLayer) {
     serverLayer.users.add('test');
-    ...
+    // ...
   }
 );
 {% endhighlight %}
 
 ###3. Example where a provider declaration is the most suitable to use
 
-A provider is the most generic way of declaring a service. Both "factory declarations" and "service declarations" can be replaced by a "provider declaration". Factories and services are themselves declared using providers under the hood. 
+A provider is the most generic way of declaring a service. Both "factory declarations" and "service declarations" can be replaced by a "provider declaration". Factories and services are themselves declared using providers under the hood.
 
 The "provider declaration" has the most laborious syntax and allows the configuration of our service before the Angular app actually runs. This happens in the so called "config phase". What's special about the config phase is that we can only inject providers in it (we can not inject services defined with "factory" or "service" declarations) and allows us to configure our services before they run.
 
@@ -136,25 +144,25 @@ Therefore we'll most likely need to offer the user a way of configuring the serv
 
 If we were to build our service using a "factory or service declaration" then we wouldn't be able to know about this preference when our service is initialised. We would have to manually call a run method which would receive a parameter indicating if we should collect the inline errors or not (or some other alternative approaches) but the idea is that we can't detect that when the service runs.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 .factory('NotificationsQueue', function () {
 
-  //define the constructor
+  // define the constructor
   function NotificationsQueueConstructor(params) {
     this.queue = [];
-    ...
+    // ...
   }
 
-  //define the prototype
-  NotificationsQueueConstructor.prototype.add = 
+  // define the prototype
+  NotificationsQueueConstructor.prototype.add =
   function() {
-    ...
+    // ...
   }
 
-  //when the execution reaches this line we can't 
-  //decide if this NotificationQueue should 
-  //automatically collect the inline error messages
-  //or not
+  // when the execution reaches this line we can't
+  // decide if this NotificationQueue should
+  // automatically collect the inline error messages
+  // or not
 
   return NotificationsQueueConstructor;
 });
@@ -162,10 +170,10 @@ If we were to build our service using a "factory or service declaration" then we
 
 but if we define our service using a provider, when we reach the same execution line, we will be able to know the developer's preference for this service.
 
-Eg: 
+Eg:
 
-{% highlight javascript linenos %}
-app.config(["NotificationQueueProvider", 
+{% highlight javascript %}
+app.config(["NotificationQueueProvider",
   function(NotificationQueueProvider) {
     NotificationQueueProvider.collectInline();
   }
@@ -178,31 +186,31 @@ app.config(["NotificationQueueProvider",
     collectInline = true;
   };
 
-  //Provider return value
+  // Provider return value
   this.$get = function () {
 
-    //define the constructor
+    // define the constructor
     function NotificationsQueueConstructor(params) {
       this.queue = [];
-      ...
+      // ...
     }
 
-    //define the prototype
-    NotificationsQueueConstructor.prototype.add = 
+    // define the prototype
+    NotificationsQueueConstructor.prototype.add =
       function() {
-        ...
+        // ...
       }
 
-    //this time when the execution reaches this point
-    //we know if the service should collect the inline
-    //error messages or not that's because the 
-    //provider was configured in the config state and 
-    //since we are inside a closure we have access to 
-    //the collectInline variable defined in the upper
-    //scope
- 
+    // this time when the execution reaches this point
+    // we know if the service should collect the inline
+    // error messages or not that's because the
+    // provider was configured in the config state and
+    // since we are inside a closure we have access to
+    // the collectInline variable defined in the upper
+    // scope
+
     if(collectInline) {
-      //automatically collect inline messages
+      // automatically collect inline messages
     }         
 
     return NotificationQueue;

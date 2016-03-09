@@ -10,6 +10,6 @@ A reminder about how to easily reset MySQL password on Windows machines.
 
 Navigate to bin directory of your mysql folder, open a command prompt there (as administrator) and type:
 
-{% highlight sql linenos %}
+{% highlight sql %}
 mysqladmin -u root password admin
 {% endhighlight %}

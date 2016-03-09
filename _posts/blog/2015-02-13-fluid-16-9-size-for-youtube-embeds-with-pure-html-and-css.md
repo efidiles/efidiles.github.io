@@ -16,18 +16,20 @@ A pure CSS solution to allow YouTube embeds to:
 - keep the 16:9 ratio when window/screen size is smaller than max-width
 - support IE8+
 
-{% highlight html linenos %}
+{% highlight html %}
 <div style="text-align: center; background: #ccc">
     <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/eCqhy5RoDf0?modestbranding=1&;showinfo=0&;autohide=1&;rel=0;" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/eCqhy5RoDf0?
+            modestbranding=1&;showinfo=0&;autohide=1&;rel=0;" frameborder="0">
+        </iframe>
     </div>
 </div>
 {% endhighlight %}
 
-{% highlight css+php linenos %}
+{% highlight css %}
 .video-wrapper {
     /* allows the container to horizontally center */
-    display: inline-block; 
+    display: inline-block;
     /* removes bottom spacing cause by inline-block */
     margin-bottom: -4px;
     position: relative;
