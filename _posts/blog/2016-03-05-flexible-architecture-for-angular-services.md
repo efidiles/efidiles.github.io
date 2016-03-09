@@ -3,24 +3,24 @@ layout: post
 
 title: Flexible architecture for Angular services
 
-excerpt: "A robust architecture for Angular services which behave like singletons during the application's life cycle."
+excerpt: "A robust architecture for Angular services that behave like singletons during the application's life cycle."
 
 ---
 
 Moving logic to the services is always good practice and making the services easy to use and pass around is what makes the Angular development an enjoyable experience.
 
 
-The following article describes a robust architecture for Angular services which need to behave like singletons during the application's life cycle. An example of such service is the  'currently logged in user' service (`CurrentUser` from now long).
+The following article describes a robust architecture for Angular services that need to behave like singletons during the application's life cycle. An example of such service is the  'currently logged in user' service (`CurrentUser` from now long).
 
 
-In short the architecture can be described as: **a promise which gets decorated with the data after it's resolved**.
+In short, the architecture can be described as: **a promise which gets decorated with the data after it's resolved**.
 
 
 This architecture offers the following benefits:
 
 - trivial to use in resolve phases - just needs to be injected and returned from the resolve function
 - since it's a promise, it can be used as a then-able in controllers. With the exception of route's controller where it makes more sense and it's more elegant to inject it through the route's resolve phase
-- can be easily injected and used in other services the same way we use any other promise
+- can be easily injected and used in other services in the same way we work with any other promise (as .then-able)
 - templates can bind directly on the 'promised' properties. Even if the primitives are not yet available on the service until the promise is resolved (more about this below).  
 
 
@@ -35,7 +35,7 @@ This architecture offers the following benefits:
   /* @ngInject */
   function CurrentUser($rootScope, _, $q, Authentication, Restangular, RestAPI,
     AccountService) {
-      
+
     var path = 'current-user';
     var rolePath = 'role';
     var invalidCache = true;
@@ -59,7 +59,7 @@ This architecture offers the following benefits:
     if (invalidCache && isUserLoggedIn) {
       invalidCache = false;
       var currentUserPromise = thisService.fetchCurrentUserData();
-      cachedInstance = _.assign(currentUserPromise, 
+      cachedInstance = _.assign(currentUserPromise,
         _.cloneDeep(instanceDefaults));
     } else {
       // Return empty promise if not authenticated
@@ -78,6 +78,7 @@ This architecture offers the following benefits:
     function _configureService(RestangularConfigurer) {
       RestangularConfigurer.addElementTransformer(path, _addElementMethods);
     }
+
     /**
      * Add element specific custom methods
      * @param currentUser
@@ -86,7 +87,7 @@ This architecture offers the following benefits:
     function _addElementMethods(userService) {
       userService.addRestangularMethod('getRole', 'get', rolePath);
 
-      userService.fetchCurrentUserData = 
+      userService.fetchCurrentUserData =
         _fetchCurrentUserData.bind(userService);
 
       return userService;
@@ -123,30 +124,30 @@ This architecture offers the following benefits:
 
         _setPermissions();
 
-        // Make sure we keep references of the cachedInstance and its nested 
-        // objects. Don't override them with new objects. Eg: permissions 
-        // property - we can not simply assign a new object to 
-        // cachedInstance.permissions because it will allocate a new memory 
-        // address and will break bindings in templates. Instead we need to 
-        // clear the contents of permissions object and add new props. This way 
-        // all the existing bindings still work because they target the same 
+        // Make sure we keep references of the cachedInstance and its nested
+        // objects. Don't override them with new objects. Eg: permissions
+        // property - we can not simply assign a new object to
+        // cachedInstance.permissions because it will allocate a new memory
+        // address and will break bindings in templates. Instead we need to
+        // clear the contents of permissions object and add new props. This way
+        // all the existing bindings still work because they target the same
         // memory location not the memory location of newly created objects.
 
-        // We need to clear existing properties and then assign them in order 
+        // We need to clear existing properties and then assign them in order
         // to prevent accumulating permissions from previous sessions.
         _.map(cachedInstance.permissions, _removeProperty);
 
-        currentUser.permissions = 
+        currentUser.permissions =
           _.assign(cachedInstance.permissions, permissions);
         currentUser.account = _.assign(cachedInstance.account, account);
 
         _.assign(cachedInstance, currentUser);
 
-        // Just decorating the service with the data is not enough because when 
-        // the service is used in route's resolve methods the data we return 
-        // here will be what's injected and available in the controllers.
-        // Don't return the cachedInstance (the promise itself) because of 
-        // circular reference. Instead extend currentUser with the same 
+        // Just decorating the service with the data is not enough because when
+        // the service is used in route's resolve methods the data we return
+        // here will be what's injected and available in the controller.
+        // Don't return the cachedInstance (the promise itself) because of
+        // circular referencing. Instead extend currentUser with the same
         // properties and return it.
         return currentUser;
 
@@ -210,7 +211,7 @@ if (invalidCache && isUserLoggedIn) {
 
 which translates to:
 
-{% highlight javascript %}
+{% highlight %}
 if (cache is not set and we have an auth token) {
   1. fetch the current user data from the api and
   2. decorate this service with the promise created by the above fetch
@@ -219,7 +220,7 @@ if (cache is not set and we have an auth token) {
 }
 {% endhighlight %}
 
-If the `else` branch is executed then we will go through the same process in the logged in event. The following piece of code does that:
+If the `else` branch is executed, we will go through the same process again when the auth:login event is triggered. The following piece of code does that:
 
 {% highlight javascript %}
 $rootScope.$on('auth:login', _checkCache);
