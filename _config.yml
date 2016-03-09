@@ -29,7 +29,7 @@ paginate: 10
 #
 
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title
 
 # The release of Jekyll Now that you're using
@@ -41,7 +41,8 @@ sass:
 
 # Use the following plug-ins
 gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-sitemap
+  - jekyll-paginate
 
 # Exclude these files from your production _site
 exclude:

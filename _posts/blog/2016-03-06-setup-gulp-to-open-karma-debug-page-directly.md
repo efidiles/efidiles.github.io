@@ -19,7 +19,7 @@ The following setup allows that:
 Thus inside `karma.conf.js` set `browsers: []`
 - We'll add a few lines of code in our gulpfile to dynamically capture the url address of Karma's web server
 
-{% highlight javascript %}
+```js
 var karmaInstance = new KarmaServer(karmaConfig, _onKarmaExit);
 
 // get Karma's web server instance
@@ -27,9 +27,7 @@ var karmaWebServer = karmaInstance.get('webServer');
 
 // listen on listening event and grab the address to pass to browserSync
 karmaWebServer.on('listening', _getConnectionDetails);
-{% endhighlight %}
 
-{% highlight javascript %}
 function _getConnectionDetails() {
   var connectionDetails = karmaWebServer.address();
   var debugAddress = [
@@ -40,14 +38,17 @@ function _getConnectionDetails() {
 
   _startBrowserSync(debugAddress);
 }
-{% endhighlight %}
+```
 
 - Pass the address to browser-sync and open a browser instance
 
 ## Running the project
-1. `git clone git@github.com:efidiles/karma-debug-with-browser-sync.git karma-debug-with-browser-sync`
-2. `npm install`
-3. `npm test`
+
+```shell
+1. git clone git@github.com:efidiles/karma-debug-with-browser-sync.git .
+2. npm install
+3. npm test
+```
 
 Karma's `/debug.html` will now open in your browser.
 

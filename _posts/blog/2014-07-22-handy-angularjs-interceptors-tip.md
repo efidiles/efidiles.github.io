@@ -27,15 +27,13 @@ This time, regardless of what actions the user performes, when the first ajax re
 
 Example of code for an interceptor:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 function checkSession(r, $location) {
-    var 
-      loginUrl = '/api/user/login',
-      logoutUrl = /api/user/logout'
-    ;
+    var loginUrl = '/api/user/login';
+    var logoutUrl = '/api/user/logout';
 
-    if (r.config.url !== loginUrl && 
-        r.config.url !== logoutUrl && 
+    if (r.config.url !== loginUrl &&
+        r.config.url !== logoutUrl &&
         r.session && !r.session.isLoggedIn) {
             $location.path('/login');          
     }
@@ -51,7 +49,7 @@ $httpProvider.interceptors.push(
       },
      'responseError': function(rejection) {
         //check if the website is in maintenance
-        if (rejection.data.result && 
+        if (rejection.data.result &&
             rejection.data.result.in_maintenance) {
                 $location.path('/maintenance');
         }
