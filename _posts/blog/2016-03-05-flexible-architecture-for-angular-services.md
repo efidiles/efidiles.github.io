@@ -220,7 +220,7 @@ if (cache is not set and we have an auth token) {
 }
 {% endhighlight %}
 
-If the `else` branch is executed, we will go through the same process again when the auth:login event is triggered. The following piece of code does that:
+If the `else` branch is executed, we will go through the same process again when the `auth:login` event is triggered. The following piece of code does that:
 
 {% highlight javascript %}
 $rootScope.$on('auth:login', _checkCache);
