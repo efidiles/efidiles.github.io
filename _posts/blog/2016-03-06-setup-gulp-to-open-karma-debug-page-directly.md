@@ -8,11 +8,11 @@ excerpt: "Configure Gulp and Karma to only open the debug.html page"
 ---
 
 By default Karma doesn't open the debug page directly and it doesn't have a
-config setting to only open the debug page.
+setting to only open the debug page.
 
-When you setup a Gulp task to run the tests in a browser instance it's a bit annoying to keep clicking the debug button and open a new tab to start running the tests. Instead I would like Gulp to only open the debug page directly when the task starts.
+When default Karma configuration to run the tests in a browser instance is a bit annoying because it requires the user to keep clicking the debug button - which opens a new tab and eventually starts running the tests. Instead I would like Gulp to only open the debug.html page directly when the Gulp task starts.
 
-The following setup allows to do that:
+The following setup allows that:
 
 - We'll need browser sync
 - In Karma config don't specify any browsers to launch automatically because we'll use browser-sync for that.
