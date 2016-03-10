@@ -261,7 +261,7 @@ Examples of usage:
 - bindings in templates:
 {% highlight javascript %}
 function Controller($scope, CurrentUser) {
-	$scope.currentUser = CurrentUser;
+  $scope.currentUser = CurrentUser;
 }
 {% endhighlight %}
 {% highlight html %}
