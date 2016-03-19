@@ -7,6 +7,8 @@ excerpt: "Use Fiddler to mock error responses in order to test
     how errors are displayed in the interface."
 ---
 
+**!IMPORTANT: If you have problems with your Internet connection make sure Fiddler is not configured as your proxy. This usually happens when you run use Fiddler and force restart your computer.**
+
 Sometimes you may need to test how the error messages look in your application's view but you need to force certain responses for your requests. Of course
 this can be done in many different ways but using Fiddler is a quick and generic way of doing it.
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="canonical" href="{{ page.redirect_to }}"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="refresh" content="0;url={{ page.redirect_to }}" />
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  body {
+    background: #fff url("/images/pattern.jpg");
+    font-family: Arial;
+    color: #fff;
+    padding-top: 55px;
+  }
+  div {
+    background: #1A3C4E;
+    padding: 10px 20px 40px;
+  }
+  a {
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>{{ page.redirect_message }}</h1>
+    <a href="{{ page.redirect_to }}">Click here if you are not redirected.<a>
+  </div>
+  <script>location='{{ page.redirect_to }}'</script>
+</body>
+</html>
