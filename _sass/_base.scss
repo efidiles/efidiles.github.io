@@ -235,13 +235,13 @@ blockquote p {
   body > div {
     @extend .clearfix-mq;
 
-    max-width: $maxWidth;
+    width: 80%;
     margin: 0 auto;
   }
 
   main {
     float: left;
-    width: 82%;
+    width: 87%;
     border-right: 1px solid $colorGray;
   }
 }

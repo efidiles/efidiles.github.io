@@ -1,6 +1,7 @@
 aside {
   padding: $sizeGap;
   border-top: 1px solid $colorGray;
+  text-align: center;
 
   ul {
     @extend .list-clean;
@@ -10,17 +11,18 @@ aside {
   li {
     line-height: 1.4;
   }
-
-  img {
-    display: block;
-  }
 }
 
 @media screen and (min-width: 768px) {
+  img {
+    display: block;
+  }
+
   aside {
     border: none;
     float: left;
-    width: 18%;
+    width: 13%;
     padding: $sizeGap;
+    text-align: left;
   }
 }

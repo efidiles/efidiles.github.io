@@ -1,5 +1,6 @@
 footer {
   padding: 0 $sizeGap $sizeGap;
+  text-align: center;
 }
 
 footer strong {
@@ -18,17 +19,17 @@ footer strong {
     height: 7em;
     border-top: 1px solid $colorGray;
     background: $colorDarkBlue;
+    text-align: left;
   }
 
   footer strong {
     font-weight: bold;
     display: block;
     font-size: 10em;
-    max-width: $maxWidth;
     margin: 0 auto;
     text-align: right;
     position: absolute;
-    left: 50%;
+    right: 20px;
     bottom: -0.35em;
     margin-left: -10%;
     color: #fff;

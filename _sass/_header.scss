@@ -45,14 +45,18 @@
     font-weight: bold;
     display: block;
     font-size: 9em;
-    max-width: $maxWidth;
     margin: -3px auto 0 auto;
+    padding-left: 20px;
   }
 
   #main-header ul {
     background: $colorDarkBlue;
     background: rgba(26, 60, 78, 0.95);
     display: block;
+
+    li {
+      float: right;
+    }
   }
 
   #main-header a {
