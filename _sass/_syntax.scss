@@ -1,15 +1,26 @@
 .highlight {
   background: #fff;
-  padding: 20px 7px;
+  padding: 20px 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 20px 0 20px 0;
   overflow: auto;
 }
 
+pre.highlight {
+  line-height: 1.45;
+}
+
 code {
   font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
   background: #fff;
+}
+
+code.highlighter-rouge {
+  font-size: 0.9em;
+  background: #EFEFEF;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
 }
 
 .highlight  { background: #ffffff; }
